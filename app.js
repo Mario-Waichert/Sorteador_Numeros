@@ -4,6 +4,12 @@ function sortear() {
     let de = parseInt(document.getElementById('de').value);
     let ate = parseInt(document.getElementById('ate').value);
 
+    if (de >= ate){
+        alert('Impossível sortear, o número incial não pode ser maior ou igual ao final!');
+        reiniciar ();
+        return;
+    }
+
     let sorteados = [];//declaração da lista (array).
     let valor;
 
