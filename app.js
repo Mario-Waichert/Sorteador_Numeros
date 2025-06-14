@@ -10,6 +10,9 @@ function sortear() {
         valor = numeroAleatorio(de,ate);
         sorteados.push(valor);    
     }
+
+    let resultado = document.getElementById('resultado');
+    resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados: ${sorteados}</label>`;
     
 
 }
