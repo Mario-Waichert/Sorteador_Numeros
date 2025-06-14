@@ -21,12 +21,35 @@ function sortear() {
     let resultado = document.getElementById('resultado');
     //propriedade que altera algo no html, neste caso exibir os números sorteados
     resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados: ${sorteados}</label>`;
+  mudarStatusBotao ();  
+}
+
+function mudarStatusBotao() {
+    //declaro a variável para mudar a classlist do botão, para alternar entre habilitado e desabilitado
+    let botao = document.getElementById('btn-reiniciar');
+    if (botao.classList.contains('container__botao-desabilitado')) {
+        botao.classList.remove('container__botao-desabilitado');
+        botao.classList.add('container__botao');    
+    } else {
+        botao.classList.remove('container__botao');
+        botao.classList.add('container__botao-desabilitado');    
+    }
     
 }
+
 //função para gerar o número aleatório
 function numeroAleatorio(min,max) {
 //o Math.floor arredonda o valor decimal do Math.random.
 //era possível utilizar o parseInt para arredondar.
 return Math.floor(Math.random() * (max - min + 1)) + min;    
+}
+
+function reiniciar() {
+    //limpar os componentes da tela e mudar o status do botao
+    document.getElementById('quantidade').value = '';
+    document.getElementById('de').value = '';
+    document.getElementById('ate').value = '';
+    document.getElementById('resultado').innerHTML = '<label class="texto__paragrafo">Números sorteados:  nenhum até agora</label>';
+    mudarStatusBotao(); 
 }
 
