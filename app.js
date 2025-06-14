@@ -9,6 +9,12 @@ function sortear() {
         reiniciar ();
         return;
     }
+    if (ate - de < quantidade) {
+        alert('Impossível sortear, quantidade é menor do que o intervalo');
+        reiniciar ();
+        return;
+        
+    }
 
     let sorteados = [];//declaração da lista (array).
     let valor;
