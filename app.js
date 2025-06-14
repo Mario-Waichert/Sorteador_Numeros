@@ -10,7 +10,7 @@ function sortear() {
         return;
     }
     if (ate - de < quantidade) {
-        alert('Impossível sortear, quantidade é menor do que o intervalo');
+        alert('Impossível sortear, quantidade é menor do que o intervalo escolhido');
         reiniciar ();
         return;
         
@@ -38,13 +38,21 @@ function sortear() {
 
 function mudarStatusBotao() {
     //declaro a variável para mudar a classlist do botão, para alternar entre habilitado e desabilitado
-    let botao = document.getElementById('btn-reiniciar');
-    if (botao.classList.contains('container__botao-desabilitado')) {
-        botao.classList.remove('container__botao-desabilitado');
-        botao.classList.add('container__botao');    
+    let botaoReiniciar = document.getElementById('btn-reiniciar');
+    if (botaoReiniciar.classList.contains('container__botao-desabilitado')) {
+        botaoReiniciar.classList.remove('container__botao-desabilitado');
+        botaoReiniciar.classList.add('container__botao');    
     } else {
-        botao.classList.remove('container__botao');
-        botao.classList.add('container__botao-desabilitado');    
+        botaoReiniciar.classList.remove('container__botao');
+        botaoReiniciar.classList.add('container__botao-desabilitado');    
+    }
+     let botaoSortear = document.getElementById('btn-sortear');
+    if (botaoSortear.classList.contains('container__botao-desabilitado')) {
+        botaoSortear.classList.remove('container__botao-desabilitado');
+        botaoSortear.classList.add('container__botao');    
+    } else {
+        botaoSortear.classList.remove('container__botao');
+        botaoSortear.classList.add('container__botao-desabilitado');    
     }
     
 }
